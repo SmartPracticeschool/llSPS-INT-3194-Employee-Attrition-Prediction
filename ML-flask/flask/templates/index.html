@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<style>
+.login{
+top: 20%;
+}
+</style>
+</head>
+
+<body>
+ <div class="login">
+	<h1>Attrition or Not</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('y_predict')}}"method="post">
+        <div style="float:left">
+           <input type="text" name="MaritalStatus 1" placeholder="MaritalStatus 1" required="required" />
+        </div>
+        <div style="float:right">
+            <input type="text" name="MaritalStatus 2" placeholder="MaritalStatus 2" required="required" />
+        </div>
+        <div style="float:left">
+        
+            <input type="text" name="EducationField 1 " placeholder="EducationField 1" required="required" />
+        </div>
+        <div style="float:right">
+            <input type="text" name="EducationField 2 " placeholder="EducationField 2 " required="required" />
+        </div>
+        <div style="float:left">
+       
+            <input type="text" name="EducationField 3 " placeholder="EducationField 3 " required="required" />
+        </div>
+        <div style="float:right">
+            <input type="text" name="EducationField 4 " placeholder="EducationField 4 " required="required" />
+        </div>
+        <div style="float:left">
+            <input type="text" name="EducationField 5" placeholder="EducationField 5" required="required" />
+        </div>
+        <div style="float:right">
+            <input type="text" name="Department 1" placeholder="Department 1" required="required" />
+        </div>
+        <div style="float:left">
+            <input type="text" name="Department 2" placeholder="Department 2" required="required" />
+        </div>
+        <div style="float:right">
+
+            <input type="text" name="BusinessTravel 1" placeholder="BusinessTravel 1" required="required" />
+        </div>
+        <div style="float:left">
+            <input type="text" name="BusinessTravel 2" placeholder="BusinessTravel 2" required="required" />
+        </div>
+        <div style="float:right">
+            <input type="text" name="Age" placeholder="Age" required="required" />
+        </div>
+        <div style="float:left">
+            <input type="text" name="JobInvolvement" placeholder="JobInvolvement" required="required" />
+        </div>
+        <div style="float:right">
+            <input type="text" name="JobSatisfaction" placeholder="JobSatisfaction" required="required" />
+        </div>
+        <div style="float:left">
+            <input type="text" name="NumCompaniesWorked" placeholder="NumCompaniesWorked" required="required" />
+        </div>
+        <div style="float:right">
+            <input type="text" name="PercentSalaryHike" placeholder="PercentSalaryHike" required="required" />
+        </div>
+        <div style="float:left">
+            <input type="text" name="TrainingTimesLastYear" placeholder="TrainingTimesLastYear" required="required" />
+        </div>
+        <div style="float:right">
+            <input type="text" name="YearsInCurrentRole" placeholder="YearsInCurrentRole" required="required" />
+        </div>
+        <div style="float:left">
+            <input type="text" name="YearsSinceLastPromotion" placeholder="YearsSinceLastPromotion" required="required" />
+        </div>   
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
+
+
